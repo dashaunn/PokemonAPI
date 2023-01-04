@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello JSON!</title>
+        <script>
+            window.addEventListener("load", function() {
+                let name = document.getElementById("pokeName");
+                let ability1 = document.getElementById("ability1");
+                let ability2 = document.getElementById("ability2");
+                let type1 = document.getElementById("type1");
+                let type2 = document.getElementById("type2");
+                let img = document.getElementById("img");
+
+                fetch("https://pokeapi.co/api/v2/pokemon/333").then(function(response) {
+                    
+                    response.json().then(function(json) {
+                    img.setAttribute("src", json.sprites.front_shiny);
+                    name.innerHTML = json.name;
+                    ability1.innerHTML = json.abilities[0].ability.name;
+                    ability2.innerHTML = json.abilities[1].ability.name;
+                    type1.innerHTML = json.types[0].type.name;
+                    type2.innerHTML = json.types[1].type.name;
+                    });
+                });
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <h1>JSON Pokemon example</h1>
+        <img id="img">
+        <p><strong>Name: </strong> <span id="pokeName"> </span></p>
+        <p><strong>Ability 1: </strong> <span id="ability1"> </span></p>
+        <p><strong>Ability 2: </strong> <span id="ability2"> </span></p>
+        <p><strong>Type 1: </strong> <span id="type1"> </span></p>
+        <p><strong>Type 2: </strong> <span id="type2"> </span></p>
+    </body>
+</html>
