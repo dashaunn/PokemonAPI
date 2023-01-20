@@ -1,0 +1,23 @@
+.main{
+    text-align: center;
+}
+
+.main button {
+    background-color: blueviolet;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+body {
+    background-color: white;
+}
+
+.box {
+    border: 2px solid blueviolet;
+    padding: 5px; /* or */
+    margin-bottom: 5px;
+}
