@@ -17,6 +17,7 @@ window.addEventListener("load", function() {
 
     async function getRandomPokemon() {
         // Clear all fields before placing data
+        img.setAttribute("src", "");
         name.innerHTML = "";
         ability1.innerHTML = "";
         ability2.innerHTML = "";

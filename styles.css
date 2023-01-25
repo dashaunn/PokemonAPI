@@ -3,7 +3,7 @@
 }
 
 .main button {
-    background-color: blueviolet;
+    background-color: blue;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -17,7 +17,12 @@ body {
 }
 
 .box {
-    border: 2px solid blueviolet;
+    border-top: 6px solid red;
+    border: 2px solid mediumblue;
     padding: 5px; /* or */
     margin-bottom: 5px;
+}
+
+.header {
+    text-align: left;
 }
