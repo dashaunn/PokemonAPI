@@ -2,6 +2,7 @@ window.addEventListener("load", function() {
     let id = this.document.getElementById("id");
     let name = document.getElementById("pokeName");
     let img = document.getElementById("img");
+    let type = document.getElementById("type");
     let move1 = document.getElementById("move1");
     let move2 = document.getElementById("move2");
     let move3 = document.getElementById("move3");
@@ -21,6 +22,7 @@ window.addEventListener("load", function() {
         id.innerHTML = "";
         name.innerHTML = "";
         img.setAttribute("src", "");
+        type.innerHTML = "";
         move1.innerHTML = "";
         move2.innerHTML = "";
         move3.innerHTML = "";
@@ -37,6 +39,7 @@ window.addEventListener("load", function() {
             id.innerHTML = json.id;
             name.innerHTML = json.name;
             img.setAttribute("src", json.sprites.front_default);
+            type.innerHTML = json.types[0].type.name;
             move1.innerHTML = json.moves[0].move.name;
             move2.innerHTML = json.moves[1].move.name;
             move3.innerHTML = json.moves[2].move.name;
