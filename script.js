@@ -1,12 +1,13 @@
 window.addEventListener("load", function() {
+    let id = this.document.getElementById("id");
     let name = document.getElementById("pokeName");
-    let ability1 = document.getElementById("ability1");
-    let ability2 = document.getElementById("ability2");
-    let type1 = document.getElementById("type1");
-    let type2 = document.getElementById("type2");
     let img = document.getElementById("img");
-    let height = document.getElementById("height");
-    let weight = document.getElementById("weight");
+    let move1 = document.getElementById("move1");
+    let move2 = document.getElementById("move2");
+    let move3 = document.getElementById("move3");
+    let xp = document.getElementById("xp");
+    let height = this.document.getElementById("height");
+    let weight = this.document.getElementById("weight");
 
     let randomBtn = document.getElementById("randomBtn");
     randomBtn.addEventListener("click", getRandomPokemon);
@@ -17,12 +18,13 @@ window.addEventListener("load", function() {
 
     async function getRandomPokemon() {
         // Clear all fields before placing data
-        img.setAttribute("src", "");
+        id.innerHTML = "";
         name.innerHTML = "";
-        ability1.innerHTML = "";
-        ability2.innerHTML = "";
-        type1.innerHTML = "";
-        type2.innerHTML = "";
+        img.setAttribute("src", "");
+        move1.innerHTML = "";
+        move2.innerHTML = "";
+        move3.innerHTML = "";
+        xp.innerHTML = "";
         height.innerHTML = "";
         weight.innerHTML = "";
 
@@ -32,12 +34,13 @@ window.addEventListener("load", function() {
         let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`).then(function(response) {
             response.json().then(function(json) {
             // update the page with the new Pokémon's data
-            img.setAttribute("src", json.sprites.front_default);
+            id.innerHTML = json.id;
             name.innerHTML = json.name;
-            ability1.innerHTML = json.abilities[0].ability.name;
-            ability2.innerHTML = json.abilities[1].ability.name;
-            type1.innerHTML = json.types[0].type.name;
-            type2.innerHTML = json.types[1].type.name;
+            img.setAttribute("src", json.sprites.front_default);
+            move1.innerHTML = json.moves[0].move.name;
+            move2.innerHTML = json.moves[1].move.name;
+            move3.innerHTML = json.moves[2].move.name;
+            xp.innerHTML = json.base_experience;
             height.innerHTML = json.height;
             weight.innerHTML = json.weight;
             });

@@ -16,7 +16,7 @@ body {
     background-color: white;
 }
 
-.box {
+.border {
     border-top: 6px solid red;
     border: 2px solid mediumblue;
     padding: 5px; /* or */
