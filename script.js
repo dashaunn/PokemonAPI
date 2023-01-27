@@ -18,17 +18,7 @@ window.addEventListener("load", function() {
 
 
     async function getRandomPokemon() {
-        // Clear all fields before placing data
-        id.innerHTML = "";
-        name.innerHTML = "";
-        img.setAttribute("src", "");
-        type.innerHTML = "";
-        move1.innerHTML = "";
-        move2.innerHTML = "";
-        move3.innerHTML = "";
-        xp.innerHTML = "";
-        height.innerHTML = "";
-        weight.innerHTML = "";
+
 
         // generate a random number between 1 and 807 (the number of Pokémon in the Pokédex)
         let randomNum = Math.floor(Math.random() * 807) + 1;
@@ -45,7 +35,18 @@ window.addEventListener("load", function() {
             move3.innerHTML = json.moves[2].move.name;
             xp.innerHTML = json.base_experience;
             height.innerHTML = json.height;
+            //The API
+            let decimeters = json.height;
+            let meters = decimeters * 0.1;
+            let feet = meters * 3.2808;
+            let totalInches = feet * 12;
+            let inches = Math.round(totalInches % 12);
+            let floorFeet = Math.floor(totalInches/12);
+            height.innerHTML = floorFeet + "' " + inches + '"';
             weight.innerHTML = json.weight;
+            let kilograms = json.weight;
+            let pounds = Math.round(kilograms/4.5359237);
+            weight.innerHTML = pounds + " lbs";
             });
         });
     }
