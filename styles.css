@@ -1,5 +1,11 @@
-.main{
-    text-align: center;
+.left {
+    text-align:left;
+    margin-left: 250px;
+}
+
+.right {
+    text-align: right;
+    margin-right: 250px;
 }
 
 .main button {
